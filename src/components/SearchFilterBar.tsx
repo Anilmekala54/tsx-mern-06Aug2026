@@ -109,7 +109,7 @@ export function SearchFilterBar({
         options={homeworldOptions}
       />
       <FilterSelect value={film} onChange={onFilmChange} label="Filter by film" allLabel="All films" options={filmOptions} />
-      <span className="font-mono text-xs text-text-muted whitespace-nowrap">{resultCount} found</span>
+      <span className="font-mono text-md text-text-muted whitespace-nowrap">{resultCount} found</span>
     </div>
   );
 }

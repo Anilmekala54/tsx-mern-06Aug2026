@@ -14,7 +14,7 @@ function AppContent() {
   return (
     <div className="flex-1 flex flex-col">
       <Header />
-      <main className="flex-1 max-w-6xl mx-auto px-6 pt-7 pb-16 w-full">
+      <main className="flex-1 max-w-7xl mx-auto px-6 pt-7 pb-16 w-full">
         {!isAuthenticated && <LoginForm />}
         {isAuthenticated && loading && <Loader />}
         {isAuthenticated && !loading && error && <ErrorState message={error} onRetry={reload} />}
