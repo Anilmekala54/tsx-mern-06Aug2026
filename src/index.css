@@ -1,0 +1,85 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-bg: #0b0e14;
+  --color-bg-grid: #0e1220;
+  --color-panel: #131826;
+  --color-panel-alt: #1b2233;
+  --color-border: #2a3346;
+  --color-border-bright: #3a4a63;
+  --color-text: #e8ecf1;
+  --color-text-muted: #8592a6;
+  --color-accent: #4fd1c5;
+  --color-accent-strong: #2fb6aa;
+  --color-danger: #ff6b6b;
+  --color-warning: #f0b429;
+
+  --font-display: 'Orbitron', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --animate-spin-slow: spin 0.8s linear infinite;
+  --animate-scan: scan 1.6s linear infinite;
+
+  @keyframes scan {
+    from {
+      top: -5%;
+    }
+    to {
+      top: 105%;
+    }
+  }
+}
+
+/* Light theme overrides. Tailwind v4 utilities (bg-bg, text-text, ...) read
+   these CSS custom properties at runtime, so re-declaring them under .light
+   (applied to <html> by ThemeContext) re-themes the whole app without
+   touching component markup. */
+.light {
+  --color-bg: #eef1f6;
+  --color-bg-grid: #e4e9f1;
+  --color-panel: #ffffff;
+  --color-panel-alt: #f4f6fa;
+  --color-border: #d7dee8;
+  --color-border-bright: #b9c4d4;
+  --color-text: #131826;
+  --color-text-muted: #5b6472;
+  --color-accent: #21867d;
+  --color-accent-strong: #196b64;
+  --color-danger: #c53030;
+  --color-warning: #b9790a;
+}
+
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    @apply bg-bg text-text font-body min-h-screen antialiased transition-colors duration-300;
+    background-image:
+      radial-gradient(circle at 15% -10%, rgba(79, 209, 197, 0.08), transparent 45%),
+      radial-gradient(circle at 100% 0%, rgba(240, 180, 41, 0.05), transparent 40%);
+  }
+
+  #root {
+    @apply min-h-screen flex flex-col;
+  }
+
+  a {
+    @apply text-accent;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-accent outline-offset-2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
