@@ -79,7 +79,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       scheduleSilentRefresh(tokens.access, tokens.refresh);
     }
     return () => window.clearTimeout(refreshTimer.current);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+   
   }, []);
 
   const login = useCallback(

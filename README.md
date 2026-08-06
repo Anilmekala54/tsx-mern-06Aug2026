@@ -10,7 +10,7 @@ A modern and responsive Star Wars Character Explorer built with **React**, **Typ
 
 **GitHub Repository:** https://github.com/Anilmekala54/tsx-mern-06Aug2026
 
-**Demo Video:** https://your-youtube-or-google-drive-link
+**Demo Video:** https://drive.google.com/file/d/1o-FQl7g3S9Ij6tuwu111KotbRuN6CFBF/view?usp=sharing
 
 ---
 
@@ -162,15 +162,19 @@ UseTheForce123
 
 ```text
 src/
-│── assets/
+│── auth/
 │── components/
 │── hooks/
-│── pages/
-│── services/
-│── types/
-│── utils/
+│── theme/
+|── utils/
 │── App.tsx
 │── main.tsx
+│── api.ts
+│── App.test.tsx
+│── App.tsx
+│── index.css
+│── setupTests.ts
+│── types.ts
 ```
 
 ---
